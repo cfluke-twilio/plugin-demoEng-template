@@ -15,6 +15,8 @@ cd
 npm install
 ```
 
+In the src/constants.js file, update the packageName to match the package name in package.json
+
 ## Development
 
 In order to develop locally, you can use the Webpack Dev Server by running:
