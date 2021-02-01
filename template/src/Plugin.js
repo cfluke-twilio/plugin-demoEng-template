@@ -4,9 +4,9 @@ import { addConfigActions, getDefaultConfig } from './helpers'
 import { packageName } from './constants'
 import ExampleComponent from './components/ExampleComponent'
 
-const PLUGIN_NAME = 'DemoEngTemplatePlugin'
+const PLUGIN_NAME = '{{pluginClassName}}'
 
-export default class DemoEngTemplatePlugin extends FlexPlugin {
+export default class {{pluginClassName}} extends FlexPlugin {
   constructor() {
     super(PLUGIN_NAME)
   }
