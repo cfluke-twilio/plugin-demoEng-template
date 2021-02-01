@@ -1,4 +1,4 @@
-const packageName = 'plugin-demoEng-template'
+const packageName = '{{name}}'
 
 const pluginConfig = {
   agent: {
