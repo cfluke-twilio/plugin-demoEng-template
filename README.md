@@ -6,6 +6,12 @@ Twilio Flex Plugins allow you to customize the appearance and behavior of [Twili
 
 Make sure you have [Node.js](https://nodejs.org), [`npm`](https://npmjs.com), and [Twilio cli](https://www.twilio.com/docs/twilio-cli/quickstart) installed.
 
+Create your new flex plugin with
+
+```bash
+twilio flex:plugins:create plugin-my-cool-name --template https://github.com/cfluke-twilio/plugin-demoEng-template.git
+```
+
 Afterwards, install the dependencies by running `npm install`:
 
 ```bash
@@ -16,14 +22,6 @@ cp public/appConfig.example.js public/appConfig.js
 # If you use npm
 npm install
 ```
-
-In package.json, update the name field to your plugin name
-
-In the src/constants.js file, update the packageName to match the package name in package.json
-
-Update the variable PLUGIN_NAME in DemoEngTemplatePlugin.js file to your plugin name
-
-Rename the DemoEngTemplatePlugin.js file to your plugin name
 
 ## Development
 

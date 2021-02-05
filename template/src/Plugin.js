@@ -21,16 +21,19 @@ export default class {{pluginClassName}} extends FlexPlugin {
   init(flex, manager) {
     addConfigActions(flex)
 
-    //enabled by default (can also have disabled by default, so doesn't exist set it to false)
-    const enabled = localStorage.getItem(packageName)
+    let accountSid = manager.serviceConfiguration.account_sid
+    accountSid = accountSid.slice(accountSid.length - 6)
+    //enabled by default
+    const enabledLsKey = packageName + '-' + accountSid
+    const enabled = localStorage.getItem(enabledLsKey)
     if (!enabled) {
-      localStorage.setItem(packageName, 'true')
+      localStorage.setItem(enabledLsKey, 'true')
     } else if (enabled === 'false') {
       console.log('not activating plugin', packageName)
       return
     }
 
-    const config = getDefaultConfig()
+    const config = getDefaultConfig(accountSid)
 
     flex.AgentDesktopView.Panel2.Content.add(
       <ExampleComponent config={config} key='template-example-comp' />,

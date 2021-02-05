@@ -1,9 +1,11 @@
 import deepmerge from 'deepmerge'
 import { packageName, pluginConfig } from '../constants'
 
-const getDefaultConfig = () => {
+const getDefaultConfig = (accountSid) => {
   try {
-    const localStorageConfig = localStorage.getItem(packageName + '-config')
+    const localStorageConfig = localStorage.getItem(
+      packageName + '-config-' + accountSid,
+    )
     if (localStorageConfig) {
       const parsedConfig = JSON.parse(localStorageConfig)
       return deepmerge(pluginConfig, parsedConfig)
